@@ -38,6 +38,7 @@ def main():
         L_exact = 2 * np.pi * np.sqrt(R ** 2 + H ** 2)
         errors.append(abs(L_exact - L_simpson))
 
+    print(L_simpson, L_exact)
     # график погрешноси
     plt.figure(figsize=(8, 5))
     plt.plot(n_values, errors, marker='o', color='red', linestyle='-', linewidth=2)
@@ -61,7 +62,6 @@ def main():
 
     plt.show()
 
-    print(L_simpson, L_exact)
     return True
 
 
