@@ -16,7 +16,12 @@ def gen_t(t,R,H):
     
 def main():
     #define
-    R, H = [int(x) for x in input().split()]
+    try:
+        R, H = [int(x) for x in input("Введите 2 числа: ").split()]
+    except Exception as e:
+        print(e)
+        return -1
+
     n_values = [10, 20, 50, 100, 200, 500]
     errors = []
     
