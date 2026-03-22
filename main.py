@@ -56,7 +56,8 @@ def main():
     print(L_simpson,L_exact)
     return True
 
-main()
+
 
 if __name__ == '__main__':
     whoami()
+    main()
