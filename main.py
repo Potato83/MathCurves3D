@@ -25,7 +25,7 @@ def main():
         print(e)
         return -1
 
-    n_values = [10, 20, 50, 100, 200, 500]
+    n_values = [10, 20, 50, 100, 200, 500, 100]
     errors = []
 
     # calc
