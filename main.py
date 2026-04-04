@@ -2,20 +2,18 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import simpson
 
-
 # t - array of numbers(radian), x,y,z - arrays of coordinates
 # R - radius H - high n - division
 
 def whoami():
     print('Вариант 8. Кривые в трехмерном пространстве')
 
-
+# generating coordinates
 def gen_t(t, R, H):
     x = R * np.cos(t)
     y = R * np.sin(t)
     z = H * t
     return (x, y, z)
-
 
 def main():
     # define
@@ -25,7 +23,9 @@ def main():
         print(e)
         return -1
 
+    # number of splits
     n_values = [10, 20, 50, 100, 200, 500, 100]
+    # error
     errors = []
 
     # calc
@@ -39,6 +39,8 @@ def main():
         errors.append(abs(L_exact - L_simpson))
 
     print(L_simpson, L_exact)
+    
+    
     # график погрешноси
     plt.figure(figsize=(8, 5))
     plt.plot(n_values, errors, marker='o', color='red', linestyle='-', linewidth=2)
@@ -57,6 +59,7 @@ def main():
     ax.set_title(f"Разбиение n={n}\nВычисленная длина: {L_simpson:.4f}, Точная: {L_exact:.4f}")
     ax.scatter(x, y, z, color="red", label="Точки разбиения", s=10)  # s=10 делает точки поменьше
     ax.legend()
+
     # Проекция на XY
     ax.plot(x, y, np.zeros_like(z), label='Проекция на XY (Окружность)', linestyle='--', color='gray')
 
